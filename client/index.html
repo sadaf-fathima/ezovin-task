@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Ezovin - Task</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Register</h1>
+        <p>Please fill in this form to create an account.</p>
+        <hr>
+        <label for="name"><b>Employee Name</b><span style="color:#ff0000">*</span></label>
+        <input type="text" placeholder="Enter Name" name="name" onkeypress="allowOnlyAlphabets(event,this.value,50)" id="name" class="required">
+
+        <label for="dob"><b>Date of Birth</b></label>
+        <input type="date" name="dob" id="dob">
+    
+        <label for="age"><b>Age</b><span style="color:#ff0000">*</span></label>
+        <input type="number"  name="age" id="age" readonly class="required">
+    
+        <label for="mobile_no"><b>Mobile Number</b><span style="color:#ff0000">*</span></label>
+        <input type="number" onkeypress="limitKeypress(event,this.value,10)" name="mobile_no" id="mobile_no" class="required">
+    
+    
+        <label for="address1"><b>Address Line 1</b><span style="color:#ff0000">*</span></label>
+        <textarea class="address" type="text" name="address1" id="address1" onkeypress="avoidSpecialCharacters(event)" class="required"></textarea>
+        <p class="note">Not allowed $, %, !, +</p>
+    
+        <label for="address2"><b>Address Line 2</b></label>
+        <textarea class="address" type="text" name="address2" onkeypress="avoidSpecialCharacters(event)" id="address2"></textarea>
+        <p class="note">Not allowed $, %, !, +</p>
+
+        <label for="pincode"><b>Pincode</b><span style="color:#ff0000">*</span></label>
+        <input type="number" name="pincode" id="pincode" onkeypress="limitKeypress(event,this.value,6)" class="required">
+        
+        <label for="state"><b>State</b><span style="color:#ff0000">*</span></label>
+        <input type="text" name="state" id="state" onkeypress="allowOnlyAlphabets(event,this.value,20)" class="required">
+        
+        <label for="country"><b>Country</b><span style="color:#ff0000">*</span></label>
+        <input type="text" name="country" id="country" onkeypress="allowOnlyAlphabets(event,this.value,20)" class="required">
+    
+        <hr>
+        <button type="submit" class="registerbtn" onclick="createEmployee()">Register</button>
+            
+        <hr>
+        <a type="button" href="./listEmployees.html">List Employees</a>
+        </div>
+</body>
+    <script src="script.js"></script>
+</html>
+
+
+
